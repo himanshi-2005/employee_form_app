@@ -24,6 +24,7 @@ export default function EmployeeForm() {
           <Text>Full Name</Text>
           <TextInput
             style={styles.input}
+            placeholder="Enter full name"
             onChangeText={handleChange("fullName")}
             value={values.fullName}
           />
@@ -34,6 +35,8 @@ export default function EmployeeForm() {
           <Text>Email</Text>
           <TextInput
             style={styles.input}
+            placeholder="Enter email"
+            keyboardType="email-address"
             onChangeText={handleChange("email")}
             value={values.email}
           />
@@ -44,6 +47,8 @@ export default function EmployeeForm() {
           <Text>Phone</Text>
           <TextInput
             style={styles.input}
+            placeholder="Enter phone number"
+            keyboardType="phone-pad"
             onChangeText={handleChange("phone")}
             value={values.phone}
           />
@@ -54,6 +59,7 @@ export default function EmployeeForm() {
           <Text>Position</Text>
           <TextInput
             style={styles.input}
+            placeholder="Enter position"
             onChangeText={handleChange("position")}
             value={values.position}
           />
@@ -64,6 +70,7 @@ export default function EmployeeForm() {
           <Text>Employee ID</Text>
           <TextInput
             style={styles.input}
+            placeholder="Enter employee ID"
             onChangeText={handleChange("employeeId")}
             value={values.employeeId}
           />
@@ -79,11 +86,19 @@ export default function EmployeeForm() {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 20 },
+  container: {
+    flex: 1,
+    padding: 20,
+    justifyContent: "center",
+  },
   input: {
     borderWidth: 1,
+    borderColor: "#ccc",
     padding: 10,
     marginBottom: 10,
   },
-  error: { color: "red" },
+  error: {
+    color: "red",
+    marginBottom: 10,
+  },
 });

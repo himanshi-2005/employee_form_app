@@ -3,18 +3,19 @@ import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import { Formik } from "formik";
 import { signInValidationSchema } from "../validation/authvalidation";
 
-export default function SignInScreen() {
+export default function SignIn() {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
       validationSchema={signInValidationSchema}
-      onSubmit={() => alert("Signed In")}
+      onSubmit={() => alert("Signed In Successfully")}
     >
       {({ handleChange, handleSubmit, values, errors, touched }) => (
         <View style={styles.container}>
           <Text>Email</Text>
           <TextInput
             style={styles.input}
+            placeholder="Enter email"
             onChangeText={handleChange("email")}
             value={values.email}
           />
@@ -25,6 +26,7 @@ export default function SignInScreen() {
           <Text>Password</Text>
           <TextInput
             style={styles.input}
+            placeholder="Enter password"
             secureTextEntry
             onChangeText={handleChange("password")}
             value={values.password}
@@ -41,7 +43,18 @@ export default function SignInScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 20 },
-  input: { borderWidth: 1, padding: 10, marginBottom: 10 },
-  error: { color: "red" },
+  container: {
+    flex: 1,
+    padding: 20,
+    justifyContent: "center",
+  },
+  input: {
+    borderWidth: 1,
+    padding: 10,
+    marginBottom: 10,
+  },
+  error: {
+    color: "red",
+    marginBottom: 10,
+  },
 });

@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import { Formik } from "formik";
 import { signUpValidationSchema } from "../validation/authvalidation";
 
-export default function SignUpScreen() {
+export default function SignUp() {
   return (
     <Formik
       initialValues={{
@@ -20,6 +20,7 @@ export default function SignUpScreen() {
           <Text>Full Name</Text>
           <TextInput
             style={styles.input}
+            placeholder="Enter full name"
             onChangeText={handleChange("fullName")}
             value={values.fullName}
           />
@@ -30,6 +31,7 @@ export default function SignUpScreen() {
           <Text>Email</Text>
           <TextInput
             style={styles.input}
+            placeholder="Enter email"
             onChangeText={handleChange("email")}
             value={values.email}
           />
@@ -40,6 +42,7 @@ export default function SignUpScreen() {
           <Text>Password</Text>
           <TextInput
             style={styles.input}
+            placeholder="Enter password"
             secureTextEntry
             onChangeText={handleChange("password")}
             value={values.password}
@@ -51,6 +54,7 @@ export default function SignUpScreen() {
           <Text>Confirm Password</Text>
           <TextInput
             style={styles.input}
+            placeholder="Confirm password"
             secureTextEntry
             onChangeText={handleChange("confirmPassword")}
             value={values.confirmPassword}
@@ -67,7 +71,18 @@ export default function SignUpScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 20 },
-  input: { borderWidth: 1, padding: 10, marginBottom: 10 },
-  error: { color: "red" },
+  container: {
+    flex: 1,
+    padding: 20,
+    justifyContent: "center",
+  },
+  input: {
+    borderWidth: 1,
+    padding: 10,
+    marginBottom: 10,
+  },
+  error: {
+    color: "red",
+    marginBottom: 10,
+  },
 });
