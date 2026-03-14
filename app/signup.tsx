@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 25,
     justifyContent: "center",
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#e6f2ff",
   },
 
   title: {
