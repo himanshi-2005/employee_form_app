@@ -1,3 +1,5 @@
+// 
+
 import React from "react";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import { Formik } from "formik";
@@ -21,7 +23,9 @@ export default function EmployeeForm() {
     >
       {({ handleChange, handleSubmit, values, errors, touched }) => (
         <View style={styles.container}>
-          <Text>Full Name</Text>
+          <Text style={styles.title}>Employee Form</Text>
+
+          <Text style={styles.label}>Full Name</Text>
           <TextInput
             style={styles.input}
             placeholder="Enter full name"
@@ -32,7 +36,7 @@ export default function EmployeeForm() {
             <Text style={styles.error}>{errors.fullName}</Text>
           )}
 
-          <Text>Email</Text>
+          <Text style={styles.label}>Email</Text>
           <TextInput
             style={styles.input}
             placeholder="Enter email"
@@ -44,7 +48,7 @@ export default function EmployeeForm() {
             <Text style={styles.error}>{errors.email}</Text>
           )}
 
-          <Text>Phone</Text>
+          <Text style={styles.label}>Phone</Text>
           <TextInput
             style={styles.input}
             placeholder="Enter phone number"
@@ -56,7 +60,7 @@ export default function EmployeeForm() {
             <Text style={styles.error}>{errors.phone}</Text>
           )}
 
-          <Text>Position</Text>
+          <Text style={styles.label}>Position</Text>
           <TextInput
             style={styles.input}
             placeholder="Enter position"
@@ -67,7 +71,7 @@ export default function EmployeeForm() {
             <Text style={styles.error}>{errors.position}</Text>
           )}
 
-          <Text>Employee ID</Text>
+          <Text style={styles.label}>Employee ID</Text>
           <TextInput
             style={styles.input}
             placeholder="Enter employee ID"
@@ -78,7 +82,9 @@ export default function EmployeeForm() {
             <Text style={styles.error}>{errors.employeeId}</Text>
           )}
 
-          <Button title="Submit" onPress={() => handleSubmit()} />
+          <View style={styles.buttonContainer}>
+            <Button title="Submit" onPress={() => handleSubmit()} />
+          </View>
         </View>
       )}
     </Formik>
@@ -88,17 +94,39 @@ export default function EmployeeForm() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 25,
     justifyContent: "center",
+    backgroundColor: "#f5f5f5",
   },
+
+  title: {
+    fontSize: 26,
+    fontWeight: "bold",
+    marginBottom: 30,
+    textAlign: "center",
+  },
+
+  label: {
+    fontSize: 16,
+    marginBottom: 5,
+    fontWeight: "500",
+  },
+
   input: {
     borderWidth: 1,
     borderColor: "#ccc",
-    padding: 10,
+    padding: 12,
+    borderRadius: 6,
     marginBottom: 10,
+    backgroundColor: "white",
   },
+
   error: {
     color: "red",
     marginBottom: 10,
+  },
+
+  buttonContainer: {
+    marginTop: 10,
   },
 });
